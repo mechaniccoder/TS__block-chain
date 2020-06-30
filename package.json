@@ -1,12 +1,17 @@
 {
-  "name": "blockchain",
+  "name": "blockChain",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/mechaniccoder/TS__block-chain.git",
   "author": "mechaniccoder <yuseunghwan94@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
-    "prestart": "tsc"
+    "start": "tsc-watch --onSuccess \"node dist/index.js\" "
+  },
+  "devDependencies": {
+    "tsc-watch": "^4.2.9"
+  },
+  "dependencies": {
+    "typescript": "^3.9.5"
   }
 }

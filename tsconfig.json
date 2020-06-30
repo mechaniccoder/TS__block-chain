@@ -2,8 +2,9 @@
   "compilerOptions": {
     "module": "CommonJS", // export, import 같은 JS 문법을 사용하게 한다.
     "target": "ES2015", // 어떤 JS문법으로 컴파일될 지를 결정한다.
-    "sourceMap": true
+    "sourceMap": true,
+    "outDir": "dist" // 컴파일된 파일을 어디에 보낼지를 말한다.
   },
-  "include": ["index.ts"], // 무엇을 컴파일할 것인지 말해준다.
+  "include": ["src/**/*"], // 무엇을 컴파일할 것인지 말해준다. src 폴더 안에 모든 파일을 컴파일 한다는 의미이다.
   "exclude": ["node_modules"] // 무엇을 제외시킬 지를 말한다.
 }
