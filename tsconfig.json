@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "module": "CommonJS",
-    "target": "ES2015",
+    "module": "CommonJS", // export, import 같은 JS 문법을 사용하게 한다.
+    "target": "ES2015", // 어떤 JS문법으로 컴파일될 지를 결정한다.
     "sourceMap": true
   },
-  "include": ["index.ts"],
-  "exclude": ["node_modules"]
+  "include": ["index.ts"], // 무엇을 컴파일할 것인지 말해준다.
+  "exclude": ["node_modules"] // 무엇을 제외시킬 지를 말한다.
 }
