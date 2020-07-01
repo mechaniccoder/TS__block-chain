@@ -1,6 +1,6 @@
 # TypeScript Block Chain
 
-TypeScript를 활용해서 블록 체인을 만들어보자.
+블록 체인 클론코딩을 통해 TypeScript의 활용도를 맛보자!
 
 # dependencies
 
