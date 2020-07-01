@@ -66,14 +66,40 @@ const createBlock = (data: string): Block => {
     data,
     newTimestamp
   );
+  addBlock(newBlock);
 
   return newBlock;
 };
 
+const getHashForBlock = (aBlock: Block): string =>
+  Block.calculateBlockHash(
+    aBlock.index,
+    aBlock.previousHash,
+    aBlock.timestamp,
+    aBlock.data
+  );
+
+// Block 유효성검사
 const isBlockValid = (candidateBlock: Block, previousBlock: Block): boolean => {
   if (!Block.validateStructure(candidateBlock)) return false;
   if (previousBlock.index + 1 !== candidateBlock.index) return false;
   if (previousBlock.hash !== candidateBlock.previousHash) return false;
+  if (getHashForBlock(candidateBlock) !== candidateBlock.hash) return false;
+  return true;
 };
+
+// blockchain 배열에 Block추가하는 함수
+const addBlock = (candidateBlock: Block): void => {
+  if (isBlockValid(candidateBlock, getLatestBlock())) {
+    blockchain.push(candidateBlock);
+  }
+};
+
+createBlock("second block");
+createBlock("third block");
+createBlock("fourth block");
+createBlock("fifth block");
+
+console.log(blockchain);
 
 export {};
